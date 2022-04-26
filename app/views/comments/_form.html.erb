@@ -1,0 +1,20 @@
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label :Имя %><br>
+    <%= form.text_field :commenter %>
+    <% @article.errors.full_messages_for(:commenter).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </p>
+  <p>
+    <%= form.label :Комментарий %><br>
+    <%= form.text_area :body %>
+    <% @article.errors.full_messages_for(:body).each do |message| %>
+    <div><%= message %></div>
+    <% end %>
+  </p>
+  <p>
+    <%= form.submit "Отправить", class: "btn btn-dark" %>
+  </p>
+<% end %>
+
