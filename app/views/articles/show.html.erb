@@ -4,14 +4,12 @@
 
 <p><%= sanitize @article.body %></p>
 
-<ul>
-  <li><%= link_to "Вернуться ко всем статьям", articles_path %></li>
-  <li><%= link_to "Редактировать статью", edit_article_path %></li>
-  <li><%= link_to "Удалить", article_path, data: {
+<%= link_to "Вернуться ко всем статьям",  articles_path, class: "btn btn-dark" %>
+<%= link_to "Редактировать статью", edit_article_path, class: "btn btn-dark" %>
+<%= link_to "Удалить", article_path, class: "btn btn-dark", data: {
     turbo_method: :delete,
     turbo_confirm: "Вы уверены?"
-  } %></li>
-</ul>
+} %>
 
 <h2>Комментарии</h2>
 <%= render @article.comments %>

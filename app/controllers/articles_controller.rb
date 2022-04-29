@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article!, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :edit]
 
   def home_page
   end

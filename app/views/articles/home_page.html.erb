@@ -12,6 +12,18 @@
   </nav>
 </div>
 
+
+<% if current_user %>
+  <p>Ваша роль: <%= current_user.role %></p>
+  <% if current_user.admin? && [*2..4].include?(User.count) %>
+    <p>Всего <%= User.count %> пользователя</p>
+  <% elsif current_user.admin? && [*5..20].include?(User.count) %>
+    <p>Всего <%= User.count %> пользователей</p>
+  <% elsif current_user.admin? && [1].include?(User.count) %>
+    <p>Всего <%= User.count %> пользователь</p>
+  <% end %>
+<% end %>
+
 <div class="row mb-2">
   <div class="col-md-6">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
