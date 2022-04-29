@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article.update(views: @article.views + 1)
   end
 
   def create
