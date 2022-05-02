@@ -2,8 +2,7 @@ class ArticlesController < ApplicationController
   before_action :set_article!, only: [:show, :destroy, :edit, :update]
   before_action :authenticate_user!, only: [:new, :edit]
 
-  def home_page
-  end
+  def home_page; end
 
   def index
     @pagy, @articles = pagy Article.all
@@ -15,6 +14,7 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
 
     if @article.save
       flash[:notice] = "Вопрос создан!"
@@ -28,8 +28,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     if @article.update(article_params)
@@ -45,12 +44,15 @@ class ArticlesController < ApplicationController
     flash[:notice] = "Статья удалена!"
     redirect_to articles_path, status: :see_other
   end
+
   private
+
   def set_article!
     @article = Article.find(params[:id])
   end
 
   private
+
   def article_params
     params.require(:article).permit(:title, :body)
   end
