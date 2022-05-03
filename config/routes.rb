@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get 'search', to: 'search#index'
   # get 'users/profile', to: 'users#profile'
   devise_for :users, controllers: {

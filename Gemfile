@@ -80,3 +80,5 @@ group :test do
 end
 
 gem 'ransack'
+
+gem "activeadmin", "~> 2.12"
