@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :articles
   
-  enum role: [:user, :moderator, :admin]
+  enum role: %i[user moderator admin]
   after_initialize :set_default_role, if: :new_record?
 
   private

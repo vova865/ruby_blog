@@ -1,10 +1,10 @@
 5.times do
-  title = Faker::Name.unique.name
-  body = Faker::Hipster.paragraph_by_chars(characters: 300, supplemental: false)
-  user_id = 3
-  Article.create title: title, body: body, user_id:user_id
+  commenter = Faker::Name.unique.name
+  body = Faker::Hipster.sentence(word_count: 3, supplemental: false, random_words_to_add: 4)
+  article_id = 5
+  Comment.create commenter: commenter, body: body, article_id: article_id
 end
 
-if Rails.env.development?
-  AdminUser.create!(email: 'admin@example.com', password: '123456789', password_confirmation: '123456789')
-end
+# if Rails.env.development?
+#   AdminUser.create!(email: 'admin@example.com', password: '123456789', password_confirmation: '123456789')
+# end

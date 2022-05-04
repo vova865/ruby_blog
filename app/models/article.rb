@@ -1,7 +1,8 @@
 class Article < ApplicationRecord
   has_many :comments, dependent: :destroy
 
-  validates :title, :body, presence: { message: "не может быть пустым" }
+  validates :title, :body, presence: { message: 'не может быть пустым' }
 
   belongs_to :user
+  belongs_to :category
 end

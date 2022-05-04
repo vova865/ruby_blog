@@ -9,6 +9,8 @@
 
   <p>Просмотров: <%= @article.views %></p>
 
+  <p>Категория: <%= @article.category.name %></p>
+
   <p>Автор: <%= link_to @article.user.name, user_path(@article.user) %></p>
 
   <%= link_to "Вернуться ко всем статьям",  articles_path, class: "btn btn-dark" %>
