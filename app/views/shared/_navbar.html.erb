@@ -6,19 +6,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/articles">Все статьи</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/articles/new">Новая статья</a>
-                </li>
+                <li><%= link_to 'Все статьи', articles_path, class: "nav-link active" %></li>
+                <li><%= link_to 'Новая статья', new_article_path, class: "nav-link active" %></li>
                 <% if current_user %>
                   <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           <%= current_user.name %>
                        </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<!--                          <li><%#= link_to 'Профиль', user_path(@article.user), class: "dropdown-item" %></li>-->
                           <li><%= link_to 'Редактировать', edit_user_registration_path, class: "dropdown-item"%></li>
                           <li><hr class="dropdown-divider"></li>
                           <li><a class="dropdown-item" <%= link_to 'Выйти',  destroy_user_session_path, 'data-turbo-method': :delete%></a></li>
@@ -44,31 +39,15 @@
         </div>
     </div>
 </nav>
-
-
-<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-<!--  <div class="container-fluid">-->
-    <%#= link_to "Rails Blog", root_path, class:'navbar-brand'%>
-<!--    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-<!--      <span class="navbar-toggler-icon"></span>-->
-<!--    </button>-->
-<!--    <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-<!--      <ul class="navbar-nav me-auto mb-2 mb-lg-0">-->
-<!--        <li class="nav-item">-->
-          <%#= link_to "Home", root_path, class:'nav-link'%>
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-          <%#= link_to "Blog", posts_path, class:"nav-link" %>
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-          <%#= link_to "About", about_path, class:'nav-link'%>
-<!--        </li>-->
-<!--      </ul>-->
-<!--      <ul class="navbar-nav">-->
-        <%#= render 'search/form' %>
-        <%#= render 'layouts/notifications' %>
-        <%#= render 'user/session_manager' %>
-<!--      </ul>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--</nav>-->
+<div class="container">
+  <div class="nav-scroller py-1 mb-2">
+    <nav class="nav d-flex justify-content-between">
+      <a class="p-2 link-secondary" href="/categories/1">Спорт</a>
+      <a class="p-2 link-secondary" href="/categories/2">Технологии</a>
+      <a class="p-2 link-secondary" href="/categories/3">Культура</a>
+      <a class="p-2 link-secondary" href="/categories/4">Бизнес</a>
+      <a class="p-2 link-secondary" href="/categories/5">Политика</a>
+      <a class="p-2 link-secondary" href="/categories/6">Наука</a>
+    </nav>
+  </div>
+</div>

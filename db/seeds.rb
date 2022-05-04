@@ -1,8 +1,9 @@
-5.times do
-  commenter = Faker::Name.unique.name
-  body = Faker::Hipster.sentence(word_count: 3, supplemental: false, random_words_to_add: 4)
-  article_id = 5
-  Comment.create commenter: commenter, body: body, article_id: article_id
+20.times do
+  title = Faker::Hipster.word
+  body = Faker::Hipster.paragraph_by_chars(characters: 500, supplemental: false)
+  user_id = 5
+  category_id = 1
+  Article.create title: title, body: body, user_id: user_id, category_id: category_id
 end
 
 # if Rails.env.development?

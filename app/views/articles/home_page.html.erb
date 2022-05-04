@@ -1,28 +1,5 @@
 <% provide :page_title, "Домашняя страница" %>
-
 <div class="container">
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">Спорт</a>
-      <a class="p-2 link-secondary" href="#">Технологии</a>
-      <a class="p-2 link-secondary" href="#">Культура</a>
-      <a class="p-2 link-secondary" href="#">Бизнес</a>
-      <a class="p-2 link-secondary" href="#">Политика</a>
-      <a class="p-2 link-secondary" href="#">Наука</a>
-    </nav>
-  </div>
-
-  <% if current_user %>
-    <p>Ваша роль: <%= current_user.role %></p>
-    <% if current_user.admin? && [*2..4].include?(User.count) %>
-      <p>Всего <%= User.count %> пользователя</p>
-    <% elsif current_user.admin? && [*5..20].include?(User.count) %>
-      <p>Всего <%= User.count %> пользователей</p>
-    <% elsif current_user.admin? && [1].include?(User.count) %>
-      <p>Всего <%= User.count %> пользователь</p>
-    <% end %>
-  <% end %>
-
   <div class="row mb-2">
     <div class="col-md-6">
       <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -50,10 +27,8 @@
         </div>
         <div class="col-auto d-none d-lg-block">
           <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
         </div>
       </div>
     </div>
   </div>
 </div>
-
