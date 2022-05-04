@@ -1,9 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :set_categories
 
-  def show
-
-  end
+  def show; end
 
   private
 
