@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :set_article!, only: [:show, :destroy, :edit, :update]
-  before_action :authenticate_user!, only: [:new, :edit]
+  before_action :set_article!, only: %i[show destroy edit update]
+  before_action :authenticate_user!, only: %i[new edit]
 
   def home_page; end
 
@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
 
     if @article.save
-      flash[:notice] = "Вопрос создан!"
+      flash[:notice] = 'Вопрос создан!'
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = "Статья обновлена!"
+      flash[:notice] = 'Статья обновлена!'
       redirect_to @article
     else
       render :edit, status: :unprocessable_entity
@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = "Статья удалена!"
+    flash[:notice] = 'Статья удалена!'
     redirect_to articles_path, status: :see_other
   end
 
