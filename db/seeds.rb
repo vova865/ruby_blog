@@ -6,6 +6,7 @@
   Article.create title: title, body: body, user_id: user_id, category_id: category_id
 end
 
-# if Rails.env.development?
-#   AdminUser.create!(email: 'admin@example.com', password: '123456789', password_confirmation: '123456789')
-# end
+if Rails.env.development?
+  AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+end
+
