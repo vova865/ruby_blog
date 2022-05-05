@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'categories/:id', to: 'categories#show'
+  # get 'categories/:id', to: 'categories#show'
+  resources :categories
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)

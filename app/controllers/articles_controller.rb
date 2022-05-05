@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_action :set_article!, only: %i[show destroy edit update]
   before_action :authenticate_user!, only: %i[new edit]
+  before_action :set_categories
 
   def home_page; end
 
@@ -52,6 +53,10 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :category_id, :image)
+  end
+
+  def set_categories
+    @categories = Category.all.order(:name)
   end
 end

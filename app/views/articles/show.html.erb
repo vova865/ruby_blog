@@ -7,6 +7,11 @@
 
   <p>Опубликовано: <%= @article.formatted_created_at %></p>
 
+  <p>
+    <strong>Image data:</strong>
+    <%= image_tag @article.image_url if @article.image %>
+  </p>
+
   <p>Просмотров: <%= @article.views %></p>
 
   <p>Категория: <%= @article.category.name %></p>

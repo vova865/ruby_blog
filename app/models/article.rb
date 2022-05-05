@@ -1,8 +1,10 @@
 class Article < ApplicationRecord
-  has_many :comments, dependent: :destroy
+  include ImageUploader::Attachment(:image)
 
-  validates :title, :body, presence: { message: 'не может быть пустым' }
+  has_many :comments, dependent: :destroy
 
   belongs_to :user
   belongs_to :category
+
+  validates :title, :body, presence: { message: 'не может быть пустым' }
 end
