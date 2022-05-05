@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_user
 
-  def profile; end
+  def profile
+    @articles = @user.articles.order(created_at: :desc)
+    # @article =
+  end
 
   private
 

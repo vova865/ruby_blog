@@ -1,7 +1,7 @@
-<% provide :page_title, "Все статьи" %>
+<% provide :page_title, "Articles" %>
 
 <div class="container">
-    <h1>Все статьи</h1>
+    <h1>Articles</h1>
 
     <ul>
       <% @articles.each do |article| %>
@@ -9,8 +9,8 @@
           <%= link_to article.title, article %>
         </li>
         <p>
-          <%= truncate(article.body, length: 250) { link_to "Продолжение", article }%>
-        <p>Опубликовано:
+          <%= truncate(article.body, length: 250) { link_to "continued", article }%>
+        <p>Published at:
           <%= article.formatted_created_at %>
         </p>
         </p><hr>
