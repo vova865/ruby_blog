@@ -87,3 +87,9 @@ gem 'activeadmin', '~> 2.12'
 
 gem 'image_processing', '~> 1.12', '>= 1.12.2'
 gem 'shrine', '~> 3.0'
+
+gem 'omniauth'
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
