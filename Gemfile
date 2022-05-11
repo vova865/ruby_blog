@@ -91,5 +91,5 @@ gem 'shrine', '~> 3.0'
 gem 'omniauth'
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
+gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
