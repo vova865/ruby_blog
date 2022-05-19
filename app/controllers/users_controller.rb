@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < ApplicationControllerКомментарий
   before_action :set_user
 
   def profile

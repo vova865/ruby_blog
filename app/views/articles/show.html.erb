@@ -16,11 +16,11 @@
 
   <p><%= pluralize(@article.views, 'view') %></p>
 
-  <p>Category: <%= @article.category.name %></p>
+  <p><%= t('activerecord.models.category') %>: <%= @article.category.name %></p>
 
-  <p>Author: <%= link_to @article.user.name, user_path(@article.user) %></p>
+  <p><%= t('activerecord.models.user') %>: <%= link_to @article.user.name, user_path(@article.user) %></p>
 
-  <%= link_to "All articles",  articles_path, class: "btn btn-dark" %>
+  <%= link_to t('navbar.articles'),  articles_path, class: "btn btn-dark" %>
   <%= link_to "Edit article", edit_article_path, class: "btn btn-dark" %>
   <%= link_to "Delete", article_path, class: "btn btn-dark", data: {
       turbo_method: :delete,

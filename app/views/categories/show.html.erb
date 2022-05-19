@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Статьи про <%= @category.name.downcase %></h1>
+  <h1>Articles about <%= @category.name.downcase %></h1>
 
   <% @category.articles.each do |article| %>
     <h5>
@@ -10,7 +10,7 @@
       <%= article.body %>
     </p>
 
-    <p>Опубликовано:
+    <p>Published at:
       <%= article.formatted_created_at %>
     </p>
   <% end %>

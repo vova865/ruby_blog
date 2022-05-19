@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     @article.user = current_user
 
     if @article.save
-      flash[:notice] = 'Вопрос создан!'
+      flash[:notice] = t('.notice')
       redirect_to @article
     else
       render :new, status: :unprocessable_entity
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      flash[:notice] = 'Статья обновлена!'
+      flash[:notice] = t('.notice')
       redirect_to @article
     else
       render :edit, status: :unprocessable_entity
@@ -42,7 +42,7 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
-    flash[:notice] = 'Статья удалена!'
+    flash[:notice] = t('.notice')
     redirect_to articles_path, status: :see_other
   end
 

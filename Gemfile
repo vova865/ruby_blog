@@ -93,3 +93,4 @@ gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection', '~> 1.0'
 
+gem 'rails-i18n', '~> 7.0.0'

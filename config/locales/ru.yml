@@ -1,0 +1,38 @@
+ru:
+  activerecord:
+    models:
+      article: "Статья"
+      category: "Категория"
+      comment: "Комментарий"
+      user: "Автор"
+    attributes:
+      article:
+        title: "Заголовок"
+        body: "Текст"
+        views: "Просмотров"
+        user: "Автор"
+        category: "Категория"
+        image: "Изображение"
+  navbar:
+    articles: "Все статьи"
+    new article: "Новая статья"
+    account: "Аккаунт"
+    about: "О нас"
+    log in: "Войти"
+    sign up: "Зарегистрироваться"
+    profile: "Профиль"
+    edit: "Редактировать"
+    admin: "Админ панель"
+    log out: "Выйти"
+  articles:
+    index:
+      title: "Все статьи"
+    destroy:
+      notice: 'Статья удалена!'
+    update:
+      notice: 'Статья изменена!'
+    create:
+      notice: 'Статья создана!'
+  comments:
+    create:
+      notice: 'Комментарий создан!'
