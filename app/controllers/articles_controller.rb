@@ -46,6 +46,10 @@ class ArticlesController < ApplicationController
     redirect_to articles_path, status: :see_other
   end
 
+  def home_page
+    @articles = Article.order(:views).last(2)
+  end
+
   private
 
   def set_article!

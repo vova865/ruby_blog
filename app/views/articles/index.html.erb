@@ -9,8 +9,8 @@
           <%= link_to article.title, article %>
         </li>
         <p>
-          <%= truncate(article.body, length: 250) { link_to "continued", article }%>
-        <p>Published at:
+          <%= truncate(article.body, length: 250) { link_to t('.continued'), article }%>
+        <p><%= t('.publish') %>:
           <%= article.formatted_created_at %>
         </p>
         </p><hr>

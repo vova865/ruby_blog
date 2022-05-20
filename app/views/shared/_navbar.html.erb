@@ -14,8 +14,6 @@
                           <%= current_user.name %>
                        </a>
                       <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><%= link_to t('navbar.profile'), @user, class: "dropdown-item"%></li>
-                          <li><hr class="dropdown-divider"></li>
                           <li><%= link_to t('navbar.edit'), edit_user_registration_path, class: "dropdown-item" %></li>
                           <li><hr class="dropdown-divider"></li>
                           <% if current_user.admin? %>
@@ -36,12 +34,9 @@
                   </li>
                 <% end %>
                   <li class="nav-item">
-                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About</a>
+                      <a class="nav-link" href="#" tabindex="-1" aria-disabled="true"><%= t('navbar.about') %></a>
                   </li>
             </ul>
-
-
-
 
 
               <%= render 'search/form' %>

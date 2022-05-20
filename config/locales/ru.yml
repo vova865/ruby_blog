@@ -13,6 +13,9 @@ ru:
         user: "Автор"
         category: "Категория"
         image: "Изображение"
+      comment:
+        commenter: "Имя"
+        body: "Текст"
   navbar:
     articles: "Все статьи"
     new article: "Новая статья"
@@ -27,6 +30,15 @@ ru:
   articles:
     index:
       title: "Все статьи"
+      publish: "Опубликовано"
+      continued: "читать далее"
+    show:
+      edit: "Редактировать"
+      delete: "Удалить"
+      comment: "Комментарии"
+      add comment: "Добавить комментарий"
+      image: "Изображение"
+      data: "Опубликовано"
     destroy:
       notice: 'Статья удалена!'
     update:
@@ -36,3 +48,11 @@ ru:
   comments:
     create:
       notice: 'Комментарий создан!'
+  comment:
+    commenter: "Имя"
+    body: "Текст"
+    data: "Дата"
+  categories:
+    show:
+      title: "Статьи про"
+      publish: "Опубликовано"

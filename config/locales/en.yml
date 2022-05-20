@@ -13,6 +13,9 @@ en:
         user: "User"
         category: "Category"
         image: "Image data"
+      comment:
+        commenter: "Commenter"
+        body: "Body"
   navbar:
     articles: "Articles"
     new article: "New article"
@@ -27,6 +30,15 @@ en:
   articles:
     index:
       title: "Articles"
+      publish: "Published at"
+      continued: "continued"
+    show:
+      edit: "Edit article"
+      delete: "Delete"
+      comment: "Comment"
+      add comment: "Add comment"
+      image: "Image data"
+      data: "Published at"
     destroy:
       notice: 'Article deleted!'
     update:
@@ -36,3 +48,11 @@ en:
   comments:
     create:
       notice: 'Comment created!'
+  comment:
+    commenter: "Commenter"
+    body: "Body"
+    data: "Data"
+  categories:
+    show:
+      title: "Articles about"
+      publish: "Published at"
