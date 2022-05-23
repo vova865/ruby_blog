@@ -1,9 +1,14 @@
 class ApplicationController < ActionController::Base
   include Pagy::Backend
   include ErrorHandling
-  before_action :set_query
+  before_action :set_query, :set_locale
 
   around_action :switch_locale
+
+
+  def set_locale
+    I18n.locale = :ru
+  end
 
   def set_query
     @query = Article.ransack(params[:q])
