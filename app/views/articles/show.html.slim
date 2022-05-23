@@ -1,0 +1,34 @@
+- provide :page_title, "Article about #{@article.title}"
+.container
+  h1
+    = @article.title
+  p
+    = sanitize @article.body
+  p
+    = t('.data') + ': ' + @article.formatted_created_at
+  p
+    - if @article.image
+      strong
+        = t('.image')
+        | :
+      = image_tag @article.image_url
+  p
+    = pluralize(@article.views, 'view')
+  p
+    = t('activerecord.models.category')
+    | :
+    = @article.category.name
+  p
+    = t('activerecord.models.user')
+    | :
+    = link_to @article.user.name, user_path(@article.user)
+  = link_to t('navbar.articles'),  articles_path, class: "btn btn-dark"
+  = link_to t('.edit'), edit_article_path, class: "btn btn-dark"
+  = link_to t('.delete'), article_path, class: "btn btn-dark", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  p
+  h2
+    = t('.comment')
+  = render @article.comments
+  h2
+    = t('.add comment')
+  = render 'comments/form'

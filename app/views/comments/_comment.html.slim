@@ -1,0 +1,15 @@
+strong
+  = t('comment.commenter')
+  | :
+= comment.commenter
+br
+strong
+  = t('comment.body')
+  | :
+= comment.body
+br
+strong
+  = t('comment.data')
+  | :
+= comment.formatted_created_at
+hr

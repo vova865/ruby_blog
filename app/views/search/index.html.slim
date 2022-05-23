@@ -1,0 +1,21 @@
+h1.text-center
+  = pluralize(@articles.count, "Result")
+.container
+  table.table.table-dark.table-striped
+    thead
+      tr
+        th
+          = sort_link(@query, :title, "Title", default_order: :asc)
+        th
+          = sort_link(@query, :body, "Blog Content")
+        th
+          = sort_link(@query, :user_name, "Users")
+    tbody
+      - @articles.each do |article|
+        tr
+          td
+            = link_to article.title, article
+          td
+            = article.body.truncate_words(25)
+          td
+            = link_to article.user.name, article.user

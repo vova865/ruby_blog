@@ -1,0 +1,18 @@
+.container
+  h1
+    | My Personal Home Page
+  hr
+  h1
+    = @user.name
+  p
+    = image_tag(@user.avatar, style:"width:200px; height:200px, border-radius:100%") if @user.avatar.attached?
+  .col-10
+    - @articles.each do |a|
+      p
+        = link_to a.title, a
+      p
+        = a.body
+      p
+        | Category:
+        = a.category.name
+      hr
