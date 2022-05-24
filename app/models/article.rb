@@ -6,5 +6,7 @@ class Article < ApplicationRecord
   belongs_to :user
   belongs_to :category
 
-  validates :title, :body, presence: { message: 'не может быть пустым' }
+  validates :title, presence: true, length: { minimum: 5}
+  validates :body, presence: true, length: { in: 10..1000}
+  validates :views, numericality: { only_integer: true}
 end

@@ -154,7 +154,7 @@ ActiveAdmin.setup do |config|
 
   # == Attribute Filters
   #
-  # You can exclude possibly sensitive model attributes from being displayed,
+  # You can exclude possibly sensitive models attributes from being displayed,
   # added to forms, or exported by default by ActiveAdmin
   #
   config.filter_attributes = [:encrypted_password, :password, :password_confirmation]
@@ -280,7 +280,7 @@ ActiveAdmin.setup do |config|
   # == Filters
   #
   # By default the index screen includes a "Filters" sidebar on the right
-  # hand side with a filter for each attribute of the registered model.
+  # hand side with a filter for each attribute of the registered models.
   # You can enable or disable them for all resources here.
   #
   # config.filters = true
