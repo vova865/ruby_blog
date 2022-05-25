@@ -4,32 +4,45 @@ require 'rails_helper'
 
 RSpec.describe Article, type: :model do
   subject {
- Article.new(title: 'Rep. Buddy Shieldsz',
-             body: 'Thundercats beard vice dis] yr tousled echo. Shoreditch chillwave farm-to-table jean shorts 9sa.kda0',
-             views: 0, user_id: 1, category_id: 1, image_data: {id: '3d7bdf2bbd2132218eeabd94b846fde2.png',storage:'store',
-             metadata: {filename:'9f8fdff471b7d281f81f694c100b5adc.png',size:184520,mime_type:'image/png'}} ) }
+    described_class.new(title: 'Rep. Buddy Shieldsz',
+                body: 'Thundercats beard vice dis] yr tousled echo. Shoreditch chillwave farm-to-tjean shorts 9sa.kda0',
+                views: 0)
+  }
 
-  it 'has a title' do
 
+  before { subject.save }
+
+  it 'title should be present' do
+    subject.title = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'has a body' do
-
+  it 'body should be present' do
+    subject.body = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'has a title at least 10 characters long' do
-
+  it 'views should be present' do
+    subject.views = nil
+    expect(subject).to_not be_valid
   end
 
-  it 'has a body between 40 and 1000 characters' do
+  it 'title at least 10 characters long' do
+    subject.title = 'a'
+    expect(subject).to_not be_valid
+  end
 
+  it 'title should not be too long' do
+    subject.title = 'a' * 2000
+    expect(subject).to_not be_valid
+  end
+
+  it 'has a body between 20 and 1000 characters' do
+    expect(subject.body.length).to be_between(20, 1000).inclusive
   end
 
   it 'has numerical views' do
-
+    expect(subject.views).to be_a(Integer)
   end
 
-  it 'is valid with valid attributes' do
-    expect(Article.new).to be_valid
-  end
 end

@@ -21,7 +21,7 @@
     = form.hidden_field :image, value: form.object.cached_image_data
     = form.file_field :image
     br
-    - article.errors.full_messages_for(:body).each do |message|
+    - article.errors.full_messages_for(:image).each do |message|
       div
         = message
   br
