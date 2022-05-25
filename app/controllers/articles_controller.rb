@@ -29,7 +29,9 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def edit; end
+  def edit
+    puts "#{@article.inspect} test"
+  end
 
   def update
     if @article.update(article_params)
