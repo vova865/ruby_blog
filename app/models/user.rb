@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: [:google_oauth2]
 
+  extend FriendlyId
+  friendly_id :name, use: :slugged
+
   has_many :articles
 
   has_one_attached :avatar

@@ -9,4 +9,6 @@ br
 strong
   = %"#{ t('comment.data')}: "
 = comment.formatted_created_at
+br
+= link_to t('.delete'), article_path, class: "btn btn-dark", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 hr

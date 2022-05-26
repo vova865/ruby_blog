@@ -23,7 +23,8 @@
   = link_to t('.delete'), article_path, class: "btn btn-dark", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   p
   h2
-    = t('.comment')
+    -if @article.comments.any?
+      = t('.comment')
   = render @article.comments
   h2
     = t('.add comment')
