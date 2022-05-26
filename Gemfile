@@ -99,3 +99,5 @@ gem 'rails-i18n', '~> 7.0.0'
 
 gem 'slim'
 gem 'slim-rails'
+
+gem 'friendly_id', '~> 5.4.0'

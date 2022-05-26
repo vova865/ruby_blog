@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'articles/edit', type: :view do
+RSpec.describe 'articles/index', type: :view do
   current_user = User.first_or_create!(email: 'test@gmail.com', password: 'password', password_confirmation: 'password', name: 'name')
   category = Category.first_or_create!(name: 'Business')
   before(:each) do
