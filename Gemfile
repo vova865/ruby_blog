@@ -101,3 +101,5 @@ gem 'slim'
 gem 'slim-rails'
 
 gem 'friendly_id', '~> 5.4.0'
+
+gem 'factory_bot'

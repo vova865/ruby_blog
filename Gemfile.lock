@@ -117,6 +117,8 @@ GEM
     down (5.3.1)
       addressable (~> 2.8)
     erubi (1.10.0)
+    factory_bot (6.2.1)
+      activesupport (>= 5.0.0)
     faker (2.20.0)
       i18n (>= 1.8.11, < 2)
     faraday (2.2.0)
@@ -394,6 +396,7 @@ DEPENDENCIES
   debug
   devise
   devise-i18n
+  factory_bot
   faker (~> 2)
   friendly_id (~> 5.4.0)
   image_processing (~> 1.12, >= 1.12.2)
